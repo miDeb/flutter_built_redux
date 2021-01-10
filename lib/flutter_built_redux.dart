@@ -92,7 +92,7 @@ class _StoreConnectorState<StoreState, Actions extends ReduxActions, LocalState>
   Store get _store {
     // get the store from the ReduxProvider ancestor
     final ReduxProvider reduxProvider =
-        context.inheritFromWidgetOfExactType(ReduxProvider);
+        context.dependOnInheritedWidgetOfExactType<ReduxProvider>();
 
     // if it is not found raise an error
     assert(reduxProvider != null,
