@@ -6,7 +6,7 @@ import 'test_models.dart';
 import 'test_widget.dart';
 
 void main() {
-  Store<Counter, CounterBuilder, CounterActions> store;
+  late Store<Counter, CounterBuilder, CounterActions> store;
 
   setUp(() {
     store = createStore();

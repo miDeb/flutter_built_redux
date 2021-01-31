@@ -46,12 +46,12 @@ class ProviderWidgetConnection extends StatelessWidget {
                 body: new Row(
                   children: <Widget>[
                     new RaisedButton(
-                      onPressed: actions.increment,
+                      onPressed: actions.increment as void Function()?,
                       child: new Text('Increment'),
                       key: incrementButtonKey,
                     ),
                     new RaisedButton(
-                      onPressed: actions.incrementOther,
+                      onPressed: actions.incrementOther as void Function()?,
                       child: new Text('Increment Other'),
                       key: incrementOtherButtonKey,
                     ),
@@ -89,12 +89,12 @@ class CounterWidget extends StoreConnector<Counter, CounterActions, int> {
       body: new Row(
         children: <Widget>[
           new RaisedButton(
-            onPressed: actions.increment,
+            onPressed: actions.increment as void Function()?,
             child: new Text('Increment'),
             key: incrementButtonKey,
           ),
           new RaisedButton(
-            onPressed: actions.incrementOther,
+            onPressed: actions.incrementOther as void Function()?,
             child: new Text('Increment Other'),
             key: incrementOtherButtonKey,
           ),

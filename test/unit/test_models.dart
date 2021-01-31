@@ -13,16 +13,16 @@ Store<Counter, CounterBuilder, CounterActions> createStore() => new Store(
 
 Reducer<Counter, CounterBuilder, dynamic> createReducer() =>
     (new ReducerBuilder<Counter, CounterBuilder>()
-          ..add(CounterActionsNames.increment, (s, a, b) => b.count++)
-          ..add(CounterActionsNames.incrementOther, (s, a, b) => b.other++))
+          ..add(CounterActionsNames.increment, (s, a, b) => b.count = b.count! + 1)
+          ..add(CounterActionsNames.incrementOther, (s, a, b) => b.other= b.other! + 1))
         .build();
 
 abstract class CounterActions extends ReduxActions {
   factory CounterActions() => new _$CounterActions();
   CounterActions._();
 
-  ActionDispatcher<Null> get increment;
-  ActionDispatcher<Null> get incrementOther;
+  VoidActionDispatcher get increment;
+  VoidActionDispatcher get incrementOther;
 }
 
 abstract class Counter implements Built<Counter, CounterBuilder> {

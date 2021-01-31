@@ -5,7 +5,7 @@ import 'package:flutter_built_redux/flutter_built_redux.dart';
 import 'package:flutter/material.dart' hide Builder;
 import 'package:built_value/built_value.dart';
 
-part 'example.g.dart';
+part 'main.g.dart';
 
 void main() {
   // create the store
@@ -37,7 +37,7 @@ class ConnectionExample extends StatelessWidget {
               return new Scaffold(
                 body: new Row(
                   children: <Widget>[
-                    new RaisedButton(
+                    new ElevatedButton(
                       onPressed: actions.increment,
                       child: new Text('Increment'),
                     ),
@@ -81,7 +81,7 @@ class CounterWidget extends StoreConnector<Counter, CounterActions, int> {
       new Scaffold(
         body: new Row(
           children: <Widget>[
-            new RaisedButton(
+            new ElevatedButton(
               onPressed: actions.increment,
               child: new Text('Increment'),
             ),
@@ -101,7 +101,7 @@ abstract class CounterActions extends ReduxActions {
   factory CounterActions() => new _$CounterActions();
   CounterActions._();
 
-  ActionDispatcher<Null> get increment;
+  VoidActionDispatcher get increment;
 }
 
 abstract class Counter implements Built<Counter, CounterBuilder> {
